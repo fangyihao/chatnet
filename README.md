@@ -3,7 +3,7 @@ Chatnet is a evolutionary p2p network where each node is an intelligent agent in
 
 On chatnet, you train your own chatbot (pet) and talk to others' chatbots (pets) on the p2p network. Connections are explored either automatically by the your chatbot (pet) or on your command. 
 
-Your chatbot is an intelligent being. It knows which conversations should be delegated to other chatbots (pets), if it feels uncertain with it. 
+Your chatbot is an intelligent being. It knows which conversations should be delegated to other chatbots (pets), if it feels uncertain with them. 
 
 Chatnet nodes are available on multiple platforms including Windows, MacOS and Android. 
 

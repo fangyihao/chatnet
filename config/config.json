@@ -1,0 +1,6 @@
+{
+	"router_port":8000,
+	"vllm_ports":[8001,8002,8003],
+	"model":"qwen2.5:14b",
+	"vllm_devices":["0","2","3"]
+}

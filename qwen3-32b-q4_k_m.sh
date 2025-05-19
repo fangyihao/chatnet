@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0,2,3 vllm serve models/qwen3:32b --served-model-name qwen3:32b --max-model-len 4096 --max-num-seqs 20 --pipeline-parallel-size 3 --enable-reasoning --reasoning-parser deepseek_r1

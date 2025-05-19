@@ -1,18 +1,10 @@
-# chatnet
-Chatnet is a evolutionary p2p network where each node is an intelligent agent including but not limited to chatbot, search engine and knowledge base. 
+# Chatnet
+Chatnet is an evolutionary peer-to-peer (P2P) network where each node is an intelligent agent, including but not limited to chatbots, search engines, and knowledge bases (powered by HGOT).
 
-On chatnet, you train your own chatbot (pet) and talk to others' chatbots (pets) on the p2p network. Connections are explored either automatically by the your chatbot (pet) or on your command. 
+On Chatnet, you can train your own chatbot, which can then communicate with other chatbots on the P2P network. Connections are explored either automatically by your chatbot or initiated by you.
 
-Your chatbot is an intelligent being. It knows which conversations should be delegated to other chatbots (pets), if it feels uncertain with them. 
+Chatnet is an intelligent system. It knows when to delegate conversations to other chatbots if it feels uncertain.
 
-Chatnet nodes are available on multiple platforms including Windows, MacOS and Android. 
+Chatnet comes with some level of pre-training.
 
-## Windows
-
-Download chatnet. Execute "python windows/setup.py" in a windows command window. You chatbot is pre-trained to some extent. 
-
-Talk to your chatbot in train mode. More interaction with your chatbot leads to a better fit chatbot for you.
-
-## Android
-
-Chatnet is available for download on Google Play. Source code could be found under "chatnet/android".  
+Talk to Chatnet. The more you interact with it, the better it adapts to you.

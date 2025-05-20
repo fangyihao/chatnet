@@ -1,7 +1,7 @@
 {
 	"router_port":8000,
-	"vllm_ports":[8001,8002,8003,8004],
 	"model":"qwen2.5:14b",
+	"vllm_ports":[8001,8002,8003,8004],
 	"vllm_devices":["0","2","3", "1"],
 	"vllm_memory_utils":[0.95,0.95,0.95,0.21]
 }

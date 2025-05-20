@@ -35,6 +35,7 @@ router_port = config.get("router_port", None)
 vllm_ports = config.get("vllm_ports", None)
 model = config.get("model", None)
 vllm_devices = config.get("vllm_devices", None)
+vllm_memory_utils = config.get("vllm_memory_utils", None)
 
 
 count = defaultdict(lambda: defaultdict(int))
@@ -135,11 +136,12 @@ async def create_chat_completion(request: ChatCompletionRequest):
         n_partition = [round(n/l)]*(l-1)+ [n-(l-1)*(round(n/l))]
         req_dicts = []
         for n_per_c in n_partition:
-            req_dict_per_c = copy.deepcopy(req_dict)
-            req_dict_per_c["n"] = n_per_c
-            req_dicts.append(req_dict_per_c)
-            
-        tasks = [asyncio.create_task(make_request(port, req_dict_per_c)) for port, req_dict_per_c in zip(vllm_ports, req_dicts)]    
+            if n_per_c > 0:
+                req_dict_per_c = copy.deepcopy(req_dict)
+                req_dict_per_c["n"] = n_per_c
+                req_dicts.append(req_dict_per_c)
+                
+        tasks = [asyncio.create_task(make_request(port, req_dict_per_c)) for port, req_dict_per_c in zip(vllm_ports[:len(req_dicts)], req_dicts)]    
         results = await asyncio.gather(*tasks)
         
         resp = results[0]
@@ -168,7 +170,7 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    serve_node(model = model, ports = vllm_ports, devices = vllm_devices)
+    serve_node(model = model, ports = vllm_ports, devices = vllm_devices, memory_utils=vllm_memory_utils)
     uvicorn.run(
         "router:app",
         port=router_port,

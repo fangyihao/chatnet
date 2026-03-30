@@ -1,7 +1,7 @@
 from openai import OpenAI
 import datetime
 model_type = "chat"
-model_id = "qwen2.5:14b"
+model_id = "Qwen/Qwen3.5-35B-A3B-FP8"
 start = datetime.datetime.now()
 # Modify OpenAI's API key and API base to use vLLM's API server.
 openai_api_key = "EMPTY"
@@ -11,9 +11,9 @@ client = OpenAI(
     base_url=openai_api_base,
 )
 if model_type == "text":
-    completion = client.completions.create(model=model_id, n=20, prompt="San Francisco is a")
+    completion = client.completions.create(model=model_id, n=1, prompt="San Francisco is a")
 elif model_type == "chat":
-    completion = client.chat.completions.create(model=model_id, n=20, messages=[{"role": "user", "content": "San Francisco is a"}])
+    completion = client.chat.completions.create(model=model_id, n=1, messages=[{"role": "user", "content": "San Francisco is a"}])
 
 end = datetime.datetime.now()
 duration = end - start
